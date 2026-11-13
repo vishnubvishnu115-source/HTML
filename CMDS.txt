@@ -1,0 +1,163 @@
+
+New & Modern Commands (Git 2.23 – 2.56)
+
+• git history. Rewrites commit history easily using subcommands like reword, split, fixup, and drop without needing an interactive rebase.
+• git backfill. Downloads missing blob objects in batches for partial clones to speed up local history searches and offline work.
+• git replay. Replays commits onto a new base or runs server-side rebases without requiring a working tree.
+• git refs. Consolidates low-level reference management tasks such as creating, verifying, and migrating refs.
+• git hook. Runs and lists configured Git hooks directly from the command line.
+• git maintenance. Optimizes repository speed by scheduling background garbage collection, prefetching, and commit-graph updates.
+• git scalar. Configures partial clones, sparse checkouts, and background maintenance automatically for massive monorepos.
+• git sparse-checkout. Restricts your working directory to a small subset of tracked files to improve performance in large projects.
+• git range-diff. Compares two commit ranges (such as before and after a rebase) to show how patches changed.
+• git switch. Switches between branches or creates a new branch (modern replacement for git checkout).
+• git restore. Restores working tree files or unstages changes (modern replacement for git checkout).
+• git bugreport. Collects system details and repository diagnostics into a text file for filing Git bug reports.
+• git diagnose. Gathers repository statistics and configuration data into a zip archive for troubleshooting.
+
+Setup & Configuration
+
+• git init. Creates a new, empty local Git repository in the current directory.
+• git clone. Downloads a remote repository and its full commit history to your local machine.
+• git config. Gets and sets configuration options at the system, global, or local repository level.
+• git help. Displays manual pages and documentation for Git commands and concepts.
+• git version. Prints the installed Git version and build environment details.
+
+Snapshotting & Basic Changes
+
+• git status. Displays the state of the working directory and staging area.
+• git add. Moves file changes from the working directory into the staging area (index).
+• git commit. Records staged changes permanently into the repository history.
+• git reset. Moves the current HEAD pointer backward to unstage files or undo commits.
+• git rm. Deletes files from both the working directory and the staging index.
+• git mv. Moves or renames a tracked file, directory, or symlink and stages the change.
+• git notes. Adds, edits, or inspects metadata notes attached to commits without changing their SHA hashes.
+
+Branching, Merging & Stashing
+
+• git branch. Lists, creates, renames, or deletes local and remote branches.
+• git checkout. Switches branches or restores working tree files (legacy multi-purpose command).
+• git merge. Joins two or more development histories together into the current branch.
+• git mergetool. Launches a visual merge conflict resolution tool to resolve conflicting changes.
+• git rebase. Reapplies a sequence of commits on top of another base tip.
+• git cherry-pick. Applies the changes introduced by one or more existing commits onto the current branch.
+• git stash. Temporarily shelves uncommitted changes so you can switch context cleanly.
+• git tag. Creates, lists, deletes, or verifies version tags signed with GPG or SSH.
+• git worktree. Manages multiple separate working directories attached to a single repository.
+
+Remote & Collaboration
+
+• git remote. Manages the set of tracked remote repositories and their URLs.
+• git fetch. Downloads objects and branch references from a remote repository without merging them.
+• git pull. Fetches changes from a remote repository and integrates them into your current branch.
+• git push. Updates remote branches and tags using your local commits.
+• git submodule. Initializes, updates, or inspects external Git repositories nested inside your project.
+• git subtree. Merges and splits subprojects directly into your main repository history.
+
+Inspection & History Comparison
+
+• git log. Displays the chronological commit logs for the repository.
+• git show. Shows metadata and diff changes for commits, tags, trees, or blobs.
+• git diff. Displays line-by-line changes between commits, branches, the index, and the working tree.
+• git difftool. Opens file differences in an external visual diff program.
+• git blame. Annotates each line of a file with the commit hash and author who last modified it.
+• git annotate. Annotates file lines with commit information (an older alternative to git blame).
+• git grep. Searches tracked files in the working tree or specific commits for matching text patterns.
+• git shortlog. Summarizes git log output grouped by author and commit title.
+• git describe. Generates a human-readable name for a commit based on the nearest reachable tag.
+• git reflog. Records when branch tips and HEAD were updated locally, helping you recover lost commits.
+• git bisect. Uses binary search to find the exact commit that introduced a bug.
+• git whatchanged. Shows logs along with the raw diff output for each commit (superseded by git log --raw).
+
+Patching & Email Workflows
+
+• git format-patch. Exports commits as email-formatted patch files for mailing list workflows.
+• git am. Applies a series of patches from a mailbox or patch files onto the current branch.
+• git apply. Applies a patch file to files and/or the staging index without creating a commit.
+• git send-email. Sends a collection of patches as emails directly from the command line.
+• git request-pull. Generates a summary of pending changes to request a pull from a maintainer.
+• git cherry. Finds commits in your branch that have not yet been applied upstream.
+• git citool. Launches a graphical interface for staging and committing changes.
+• git gui. Opens a portable Tcl/Tk graphical interface for common Git operations.
+• gitk. Launches a graphical repository history browser.
+
+Undoing & Repository Maintenance
+
+• git revert. Creates a new commit that safely reverses the changes of an earlier commit.
+• git clean. Removes untracked files and directories from the working tree.
+• git gc. Runs garbage collection to compress file revisions and remove unreachable objects.
+• git fsck. Verifies the connectivity and integrity of all objects in the Git database.
+• git prune. Deletes all unreachable objects from the object database.
+• git repack. Packs unpacked objects into a single packfile to save disk space.
+• git archive. Creates a .tar or .zip archive of files from a named tree or commit.
+• git bundle. Packages objects and references into a single offline archive file for transfer without a network.
+• git replace. Creates, lists, and deletes refs that transparently replace existing objects in history.
+• git instaweb. Instantly starts a local web server to browse your repository in a browser.
+
+Interacting with Other Version Control Systems
+
+• git svn. Provides bidirectional operation between a Subversion (SVN) repository and Git.
+• git p4. Imports from and submits changes to Perforce repositories.
+• git cvsimport / git cvsexportcommit. Imports history from or exports commits to CVS repositories.
+• git archimport / git quiltimport. Imports GNU Arch repositories or Quilt patch series into Git.
+• git fast-import / git fast-export. Imports or exports repository data in a fast, stream-based format for migrating between VCS tools.
+
+Plumbing: Object & Tree Manipulation
+
+• git cat-file. Displays the content, type, or size information for internal repository objects.
+• git hash-object. Computes the object ID (SHA hash) for a file and optionally writes it to the database.
+• git commit-tree. Creates a new commit object directly from a tree object and parent commits.
+• git write-tree. Creates a tree object from the current staging index.
+• git read-tree. Reads tree information into the staging index.
+• git mktree. Builds a tree object from formatted text input.
+• git mktag. Creates a tag object with strict validation.
+• git merge-tree. Performs a three-way merge in memory without touching the working tree or index.
+• git merge-file. Runs a three-way file merge on standalone files.
+• git merge-base. Finds the best common ancestor commit between two branches.
+• git pack-objects / git unpack-objects. Creates or extracts compressed archives of Git objects.
+• git index-pack / git verify-pack. Builds a pack index file or validates existing packfile archives.
+• git multi-pack-index. Writes and verifies indexes spanning multiple packfiles.
+• git commit-graph. Writes and verifies serialized commit-graph files to accelerate history traversal.
+• git prune-packed. Removes extra objects that are already stored inside packfiles.
+• git unpack-file. Creates a temporary file containing a blob's contents.
+
+Plumbing: Index & Working Tree Internals
+
+• git update-index. Registers file contents in the working tree directly into the staging index.
+• git ls-files. Lists information about files in the index and the working tree.
+• git ls-tree. Lists the contents of a tree object (blobs and subtrees).
+• git diff-files. Compares files in the working tree against the staging index.
+• git diff-index. Compares a tree object against the working tree or staging index.
+• git diff-tree. Compares the content and mode of blobs found via two tree objects.
+• git checkout-index. Copies files from the staging index out to the working tree.
+• git check-ignore. Debugs .gitignore rules by checking whether specific paths are ignored.
+• git check-attr. Displays .gitattributes values assigned to specific file paths.
+• git check-mailmap. Resolves canonical author names and email addresses using .mailmap.
+• git stripspace. Removes unnecessary whitespace and comments from text streams.
+• git var. Prints a Git logical variable (such as GIT_AUTHOR_IDENT or GIT_EDITOR).
+
+Plumbing: References & Revision Parsing
+
+• git rev-parse. Picks out and normalizes revision parameters, commit hashes, and repository paths.
+• git rev-list. Lists commit objects in reverse chronological order for scripting.
+• git for-each-ref. Outputs formatted information for each branch, tag, or ref in the repository.
+• git show-ref. Lists references available in a local repository along with their commit IDs.
+• git ls-remote. Lists references (branches and tags) available in a remote repository.
+• git update-ref. Safely updates the object name stored in a reference pointer.
+• git symbolic-ref. Reads, modifies, and deletes symbolic refs such as HEAD.
+• git check-ref-format. Ensures that a reference name follows Git's strict naming rules.
+• git name-rev. Finds symbolic names (like tags or branches) relative to given commit hashes.
+• git pack-refs. Packs loose heads and tags into a single file for faster repository access.
+• git get-tar-commit-id. Extracts the commit ID from an archive created by git archive.
+
+Plumbing: Syncing & Server Protocols
+
+• git fetch-pack / git send-pack. Low-level protocols for fetching missing objects from or pushing objects to another repository.
+• git receive-pack / git upload-pack. Server-side commands invoked to receive pushes from or serve fetches to a client.
+• git upload-archive. Serves git archive requests from a remote repository.
+• git http-backend. Server-side CGI implementation for serving Git repositories over Smart HTTP.
+• git http-fetch / git http-push. Downloads from or pushes to a remote repository over HTTP.
+• git daemon. Runs a simple, unauthenticated TCP server for sharing Git repositories over the git:// protocol.
+• git shell. A restricted login shell for SSH servers that only permits Git push/pull commands.
+• git credential / git credential-store / git credential-cache. Retrieves, stores, and caches authentication credentials in memory or on disk.
+• git remote-ext / git remote-fd. Helper programs that bridge Git transport protocols over external commands or file descriptors.
